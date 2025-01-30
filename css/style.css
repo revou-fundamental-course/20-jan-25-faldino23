@@ -1,0 +1,336 @@
+:root {
+    /* Color Palette */
+    --primary-color: #2c5282;  
+    --secondary-color: #4299e1;  
+    --background-color: #f8f9fa; 
+    --text-color: #2d3748;       
+    --border-color: #e2e8f0;     
+    --success-color: #48bb78;    
+    --warning-color: #ecc94b;    
+    --danger-color: #f56565;     
+    
+    /* Typography Scale - Inter Font Weights */
+    --font-light: 300;      
+    --font-regular: 400;    
+    --font-medium: 500;     
+    --font-semibold: 600;   
+    --font-bold: 700;       
+}
+
+/*Base Styles and Reset*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Base body styles with background pattern */
+body {
+    background-color: var(--background-color);
+    background-image: url('images/bg-pattern.svg');
+    color: var(--text-color);
+    line-height: 1.6;
+    font-weight: var(--font-regular);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Main container with responsive max-width */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/*Header Styles*/
+header[role="banner"] {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    font-weight: var(--font-bold);
+    letter-spacing: -0.025em;
+}
+
+header p {
+    font-weight: var(--font-medium);
+}
+
+/*Main Content Layout*/
+main {
+    display: grid;
+    gap: 2rem;
+}
+
+/* Common section styles with hover effect */
+section {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+section h2 {
+    font-weight: var(--font-semibold);
+    letter-spacing: -0.025em;
+}
+
+section:hover {
+    transform: translateY(-2px);
+}
+
+/*Calculator Form Styles*/
+form.calculator {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Form Labels */
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: var(--font-medium);
+    color: var(--text-color);
+}
+
+/* Form Inputs with focus states */
+input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--border-color);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.2s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
+}
+
+/* Help text below inputs */
+.help-text {
+    display: block;
+    font-size: 0.875rem;
+    color: #718096;
+    margin-top: 0.25rem;
+    font-weight: var(--font-regular);
+}
+
+/* Calculate Button Styles */
+button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: var(--font-semibold);
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-1px);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.4);
+}
+
+/* Result Output Styles */
+output.result,
+output.category {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.125rem;
+    border-radius: 0.5rem;
+    display: block;
+    font-weight: var(--font-medium);
+}
+
+/*BMI Categories Grid Layout*/
+.bmi-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+/* Individual category card styles */
+article.category-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+}
+
+article.category-item h3 {
+    font-weight: var(--font-semibold);
+    margin-bottom: 0.5rem;
+}
+
+article.category-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/*Health Information Styles*/
+.health-info {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-top: 2rem;
+}
+
+/* Disease Information List Styles */
+.disease-info h3 {
+    font-weight: var(--font-semibold);
+}
+
+.disease-info ul {
+    list-style: none;
+    margin: 1rem 0;
+}
+
+.disease-info li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    font-weight: var(--font-regular);
+}
+
+/* Custom bullet points for disease list */
+.disease-info li::before {
+    content: "•";
+    color: var(--secondary-color);
+    font-weight: var(--font-bold);
+    position: absolute;
+    left: 0;
+}
+
+/* Article Section Styles */
+.article-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.article-section h3 {
+    font-weight: var(--font-semibold);
+    margin-bottom: 1rem;
+}
+
+.article-section p {
+    margin-bottom: 1rem;
+    color: #4a5568;
+    font-weight: var(--font-regular);
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: #718096;
+    margin-top: 3rem;
+    font-weight: var(--font-regular);
+}
+
+/*Error Message Styles*/
+.error-message {
+    color: var(--danger-color);
+    background-color: #fff5f5;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    font-weight: var(--font-medium);
+    text-align: center;
+    display: none;
+    border: 1px solid #fed7d7;
+}
+
+.error-message.show {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Error message animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*BMI Category Color Schemes*/
+.underweight {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.normal {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.overweight {
+    background-color: #fff7ed;
+    color: #9a3412;
+}
+
+.obese {
+    background-color: #fef2f2;
+    color: #991b1b;
+}
+
+/*Responsive Design*/
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    header[role="banner"] {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    section {
+        padding: 1.5rem;
+    }
+    
+    .bmi-categories {
+        grid-template-columns: 1fr;
+    }
+}
