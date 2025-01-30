@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +10,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css\style.css">
 </head>
+
+
 <body>
     <div class="container">
         <header role="banner">
@@ -21,6 +25,19 @@
             <section class="calculator-section" aria-labelledby="calc-heading">
                 <h2 id="calc-heading">BMI Calculator</h2>
                 <form class="calculator" id="bmi-form" role="form" aria-label="BMI Calculator Form">
+                    <div class="input-group">
+                        <label>Gender:</label>
+                        <div class="gender-group">
+                            <label class="radio-label">
+                                <input type="radio" name="gender" value="male" checked>
+                                Male
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="gender" value="female">
+                                Female
+                            </label>
+                        </div>
+                    </div>
                     <div class="input-group">
                         <label for="weight">Weight (kg):</label>
                         <input 
@@ -65,15 +82,15 @@
                     </article>
                     <article class="category-item">
                         <h3>Normal</h3>
-                        <p>BMI 18.5 - 22.9</p>
+                        <p>BMI 18.5 - 24.9</p>
                     </article>
                     <article class="category-item">
                         <h3>Overweight</h3>
-                        <p>BMI 23.0 - 24.9</p>
+                        <p>BMI 25.0 - 29.9</p>
                     </article>
                     <article class="category-item">
                         <h3>Obese</h3>
-                        <p>BMI ≥ 25.0</p>
+                        <p>BMI ≥ 30.0</p>
                     </article>
                 </div>
             </section>
@@ -102,6 +119,6 @@
             <p>&copy; 2025 Asian BMI Calculator. All rights reserved.</p>
         </footer>
     </div>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

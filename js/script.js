@@ -1,4 +1,3 @@
-
 /*Display error message to the user*/
 function showError(message) {
     const errorDiv = document.getElementById('error-message');
@@ -85,18 +84,38 @@ function calculateBMI() {
     let category = '';
     let categoryClass = '';
 
-    // Classify BMI according to Asian BMI scale
+    // Classify BMI according to standard BMI scale
     if (bmi < 18.5) {
-        category = 'Underweight - Higher risk of nutritional deficiency diseases';
+        category = 'Underweight - You may be at risk for health issues such as:\n' +
+                  '• Weakened immune system\n' +
+                  '• Nutritional deficiencies, especially in vitamins and minerals\n' +
+                  '• Bone density issues and increased risk of osteoporosis\n' +
+                  '• Irregular menstrual cycles in women\n' +
+                  'Consider consulting a healthcare provider about healthy weight gain strategies.';
         categoryClass = 'underweight';
-    } else if (bmi >= 18.5 && bmi < 23) {
-        category = 'Normal - Low risk';
+    } else if (bmi >= 18.5 && bmi < 25) {
+        category = 'Normal Weight - You are in a healthy weight range:\n' +
+                  '• Your risk of weight-related health problems is lower\n' +
+                  '• Continue maintaining a balanced diet and regular exercise\n' +
+                  '• Regular health check-ups can help monitor your health status\n' +
+                  '• Focus on sustaining your healthy lifestyle habits';
         categoryClass = 'normal';
-    } else if (bmi >= 23 && bmi < 25) {
-        category = 'Overweight - Moderate risk of diabetes and cardiovascular diseases';
+    } else if (bmi >= 25 && bmi < 30) {
+        category = 'Overweight - You may have increased risk for:\n' +
+                  '• High blood pressure and cardiovascular issues\n' +
+                  '• Type 2 diabetes\n' +
+                  '• Sleep apnea and breathing problems\n' +
+                  '• Joint problems and osteoarthritis\n' +
+                  'Consider discussing weight management strategies with your healthcare provider.';
         categoryClass = 'overweight';
     } else {
-        category = 'Obese - High risk of diabetes and cardiovascular diseases';
+        category = 'Obese - You have a significantly higher risk for:\n' +
+                  '• Severe cardiovascular diseases and heart problems\n' +
+                  '• Type 2 diabetes and insulin resistance\n' +
+                  '• Several types of cancer\n' +
+                  '• Severe sleep apnea and respiratory problems\n' +
+                  '• Joint problems and reduced mobility\n' +
+                  'It is strongly recommended to consult with healthcare professionals for a comprehensive health assessment.';
         categoryClass = 'obese';
     }
 

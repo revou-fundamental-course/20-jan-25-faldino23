@@ -107,6 +107,28 @@ label {
     color: var(--text-color);
 }
 
+/* Gender selection styles */
+.gender-group {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-weight: var(--font-regular);
+    margin-bottom: 0;
+}
+
+.radio-label input[type="radio"] {
+    width: auto;
+    margin: 0;
+    cursor: pointer;
+}
+
 /* Form Inputs with focus states */
 input {
     width: 100%;
@@ -162,12 +184,21 @@ button:focus {
 output.result,
 output.category {
     margin-top: 1.5rem;
-    padding: 1rem;
-    text-align: center;
-    font-size: 1.125rem;
+    padding: 1.5rem;
+    text-align: left;
+    font-size: 1rem;
     border-radius: 0.5rem;
     display: block;
     font-weight: var(--font-medium);
+    white-space: pre-line;
+    line-height: 1.6;
+}
+
+output.result {
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: var(--font-semibold);
+    margin-bottom: 1rem;
 }
 
 /*BMI Categories Grid Layout*/
